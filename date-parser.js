@@ -1,7 +1,7 @@
 const dateParser = (req) => {
   var natural,
       unix,
-      date = req.path.substring(1),
+      date = req.params.date,
       dateFromPath = date.split('%20').join(' ')
   
   if(new Date(parseInt(dateFromPath)) == 'Invalid Date' && new Date(dateFromPath) == 'Invalid Date') {
