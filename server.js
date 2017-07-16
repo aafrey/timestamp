@@ -4,7 +4,9 @@ const dateParser = require('./date-parser')
 
 app.use(express.static('public'))
 
-app.get('/*', (req, res) => {
+app.get('/',(req, res) => res.sendFile(__dirname + '/views/index.html'))
+
+app.get('/:date', (req, res) => {
   let date = dateParser(req)
   res.send(date)
 })
